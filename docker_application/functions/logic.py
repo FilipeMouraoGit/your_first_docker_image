@@ -24,7 +24,7 @@ class SimpleAppLogic:
         return data_point_x, data_point_y
 
     @staticmethod
-    def fit_input_data(data_points_str, fit_degree):
+    def fit_input_data(data_points_str, fit_degree, n_fit_points=50):
         """
         Given a string of data points separated by `;` and a `fit_degree` polynomial degree:
         - Convert the data into 2 lists of points, with the  x and y coordinates;
@@ -36,6 +36,6 @@ class SimpleAppLogic:
         coefs = np.polyfit(x, y, fit_degree)
         # Generate data points to plot the function fit
         x_min, x_max = np.min(x) - 3, np.max(x) + 3
-        x_fit = np.linspace(start=x_min, stop=x_max, num=50)
+        x_fit = np.linspace(start=x_min, stop=x_max, num=n_fit_points)
         y_fit = np.poly1d(coefs)(x_fit)
         return x, y, x_fit, y_fit
