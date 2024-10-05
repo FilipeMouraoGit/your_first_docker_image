@@ -5,7 +5,7 @@ class SimpleAppViewer:
     @staticmethod
     def plot_fit_graph(x, y, x_fit, y_fit):
         """
-        Given 2 datasets (x,y) and (x_fit, y_fit) plot the first one as point and the second as a line
+        Given 2 datasets (x,y) and (x_fit, y_fit) plot the first one as scatter and the second as line
         """
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=x, y=y, mode='markers', name='Data Points'))
