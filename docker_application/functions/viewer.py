@@ -16,4 +16,4 @@ class SimpleAppViewer:
             yaxis_title='Y',
             legend=dict(orientation="v", yanchor="bottom", y=1.02, xanchor="center"),
             template='plotly_dark')
-        fig.show()
+        return fig
