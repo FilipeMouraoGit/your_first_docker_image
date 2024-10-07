@@ -1,5 +1,5 @@
 import numpy as np
-
+import logging
 
 class SimpleAppLogic:
     @staticmethod
@@ -18,9 +18,9 @@ class SimpleAppLogic:
                     x, y = float(data[0]), float(data[1])
                     data_point_x.append(x), data_point_y.append(y)
                 except:
-                    print(f'Data Point {index + 1} is not a valid!')
+                    logging.warning(f'Data Point {index + 1} ({data}) is not valid!')
             else:
-                print(f'Data Point {index + 1} does not have a (x,y) value pair')
+                logging.warning(f'Data Point {index + 1} ({data}) does not have a (x,y) value pair')
         return data_point_x, data_point_y
 
     @staticmethod
