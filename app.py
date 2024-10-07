@@ -7,7 +7,7 @@ from docker_application.functions.logic import SimpleAppLogic
 def build_input_sidebar():
     st.title("Input parameters")
     poly_degree = st.selectbox(label="Select the polynom degree", options=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    input_data_str = st.text_input(label="Enter here the input data in the right format", help='x1,y1;...;x_n,y_n')
+    input_data_str = st.text_input(label="Enter the input data", help='Format: x1,y1;x2,y2;...;x_n,y_n')
     fit_button = st.button(label='Fit Data')
     if fit_button:
         x, y, x_fit, y_fit = SimpleAppLogic.fit_input_data(data_points_str=input_data_str, fit_degree=poly_degree)
