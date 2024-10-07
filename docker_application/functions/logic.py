@@ -1,6 +1,7 @@
 import numpy as np
 import logging
 
+
 class SimpleAppLogic:
     @staticmethod
     def _clean_input_data_points(data_points_str):
